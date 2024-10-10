@@ -1,0 +1,138 @@
+body{
+    font-family : Arial , sans-serif;
+    background-color:aliceblue ; 
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    }
+    h1{
+        color: black;
+    }
+    form{ 
+        background-color: aliceblue;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 5px;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    label{
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input{type="text"}, input[type="email"], textarea {
+        width:90%;
+        padding: 10px;
+        margin-bottom: 10px ;
+        border: 5px solid #ccc;
+        border-radius: 3px;
+    }
+    input [type="submit"]{
+        background-color: cadetblue;
+        color: aliceblue;
+        border: 10 px 20px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover{
+        background-color: brown;
+        color: blanchedalmond;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: aliceblue;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    
+    h1 {
+        color: black;
+    }
+    
+    /* Form Styles */
+    form {
+        background-color: aliceblue;
+        max-width: 400px;
+        margin: 20px auto; /* Center the form with margin */
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    
+    input[type="text"], input[type="email"], textarea {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc; /* Corrected border width */
+        border-radius: 3px;
+    }
+    
+    input[type="submit"] {
+        background-color: cadetblue;
+        color: white;
+        padding: 10px 20px; /* Fixed padding */
+        border: none; /* Removed border */
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+        background-color: brown;
+        color: blanchedalmond;
+    }
+    
+    /* Business Card Styles */
+    .profile-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+    }
+    
+    .card h2 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 5px;
+    }
+    
+    .card h3 {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 15px;
+    }
+    
+    .card p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+    
+    .social-links a {
+        text-decoration: none;
+        color: #4CAF50;
+        margin: 0 10px;
+        font-size: 14px;
+        transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+        color: #0073e6;
+    }

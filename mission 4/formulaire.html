@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form>
+        <h1>Formulaire d'inscription</h1>
+        <label for="pseudo">Pseudo*</label><br>
+        <input type="text" id="pseudo" name="pseudo" required><br><br>
+
+        <label for="password">Mot de passe</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label for="prenom">Prénom</label><br>
+        <input type="text" id="prenom" name="prenom" placeholder="Votre Prénom"><br><br>
+
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="avatar">Avatar</label><br>
+        <input type="file" id="avatar" name="avatar"><br><br>
+
+        <label for="pays">Pays</label><br>
+        <select id="pays" name="pays">
+            <option value="espagne">Espagne</option>
+            <option value="france">France</option>
+            <option value="allemagne">Allemagne</option>
+            <option value="italie">Italie</option>
+        </select><br><br>
+
+        <label>Quels sont vos fruits préférés ?</label><br>
+        <input type="checkbox" id="orange" name="fruits" value="orange">
+        <label for="orange">Orange</label>
+        <input type="checkbox" id="fraise" name="fruits" value="fraise">
+        <label for="fraise">Fraise</label>
+        <input type="checkbox" id="poire" name="fruits" value="poire">
+        <label for="poire">Poire</label><br><br>
+
+        <label>Civilité</label><br>
+        <input type="radio" id="homme" name="civilite" value="homme">
+        <label for="homme">Homme</label>
+        <input type="radio" id="femme" name="civilite" value="femme">
+        <label for="femme">Femme</label><br><br>
+
+        <label for="ville">Ville</label><br>
+        <input type="text" id="ville" name="ville"><br><br>
+
+        <label for="code_postal">Code Postale</label><br>
+        <input type="text" id="code_postal" name="code_postal"><br><br>
+
+        <label for="adresse">Adresse</label><br>
+        <textarea id="adresse" name="adresse" rows="4" cols="40"></textarea><br><br>
+
+        <label for="date_naissance">Date de Naissance</label><br>
+        <input type="date" id="date_naissance" name="date_naissance"><br><br>
+
+        <label for="jauge">Jauge</label><br>
+        <input type="range" id="jauge" name="jauge" min="0" max="100"><br><br>
+
+        <label for="telephone">Téléphone</label><br>
+        <input type="tel" id="telephone" name="telephone"><br><br>
+
+        <label for="recherche">Recherche</label><br>
+        <input type="search" id="recherche" name="recherche"><br><br>
+
+        <label for="url">URL</label><br>
+        <input type="url" id="url" name="url"><br><br>
+
+        <label for="couleur">Couleur</label><br>
+        <input type="color" id="couleur" name="couleur"><br><br>
+
+        <button type="submit">Valider</button> <br>
+        <a href="index.html">retour au sommaire de la mission 4</a>
+    </form>
+    
+</body>
+</html>
