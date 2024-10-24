@@ -9,7 +9,7 @@ function test_age () {
         document.body.style.backgroundColor="green";
       
     }
-} 
+}
 
 function calcul_moyenne () {
     var n1= prompt("Donner la première note :") ;
@@ -42,6 +42,7 @@ if (moyenne <0 || moyenne >20){
     else 
     {document.write ("admis bien");}
 }
+
     function test_couleur() {
         let couleur = prompt ("Donner une couleur");
         if (couleur == "bleu"|| couleur == "blue") { 
