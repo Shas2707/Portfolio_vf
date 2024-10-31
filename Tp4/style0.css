@@ -1,0 +1,46 @@
+body {
+    background-color: #ffe6f2; /* Light pink background */
+    font-family: Arial, sans-serif;
+    color: #ff66b2; /* Deep pink text color */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+h1 {
+    font-size: 2.5em;
+    color: #ff3385; /* Darker pink for contrast */
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Heart icon after the title */
+h1::after {
+    content: " ♥";
+    color: #ff66b2;
+    font-size: 1em;
+}
+
+/* Link styling */
+a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    color: white;
+    background-color: #ff66b2; /* Deep pink link background */
+    text-decoration: none;
+    border-radius: 20px; /* Rounded button-like links */
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+a:hover {
+    background-color: #ff3385; /* Slightly darker on hover */
+    transform: scale(1.1); /* Slightly enlarges on hover */
+}
+
+/* Decorative hearts around links */
+a::before, a::after {
+    content: " ♥ ";
+    color: #ff66b2;
+}
