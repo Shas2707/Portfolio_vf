@@ -72,7 +72,16 @@ h2 {
     width: 65%;
     margin-left: 5%;
 }
-
+.block6 a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffc1cc; 
+    color: #a83256; 
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #a83256; 
+    margin-top: 20px;
+}
 
 
 
