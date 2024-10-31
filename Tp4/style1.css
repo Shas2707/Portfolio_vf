@@ -8,29 +8,25 @@ body {
 .block4 {
     width: 90%;
     margin: 0 auto;
-    background-color: #ffcedb; 
+    background-color:#ffcedb; 
     padding: 20px;
     border-radius: 10px;
 }
 .title-block {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ffc1f0; 
+    background-color: #ffcedb; 
     color: #a83256; 
     text-decoration: none;
     border-radius: 5px;
-    border: 1px solid #a83256; 
+    border: 1px solid #864a59; 
     margin-top: 20px;
 }
 .title-block h1 {
     margin: 0;
         padding: 10px;
-        color: rgb(255, 255, 255);
-        
-        fon
+        color: rgb(155, 4, 92);
     font-family: Arial, sans-serif;
-        
-        fon
     font-size: 2em;
     }
 h1 {

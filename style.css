@@ -1,0 +1,93 @@
+/* Styles de base */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffccff; /* Couleur rose pâle */
+    color: #333;
+}
+
+/* Titre de la page */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: #ff6bcb; /* Rose vif */
+}
+
+/* Conteneur central pour aligner le contenu */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Sections */
+.section {
+    background-color: #ffffff; /* Fond blanc pour les sections */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    padding: 20px;
+    margin: 20px 0;
+    width: 80%; /* Largeur de la section */
+}
+
+/* Titre des sections */
+h2 {
+    color: #ff6bcb; /* Rose vif */
+    text-align: center;
+    font-size: 2em;
+}
+
+/* Liste des devoirs */
+.assignment-list {
+    list-style-type: none; /* Pas de puces */
+    padding: 0; /* Pas de padding */
+}
+
+/* Style des liens */
+a {
+    display: block; /* Liens sur toute la largeur */
+    font-size: 1.2em;
+    color: #ff85a2; /* Rose pastel pour les liens */
+    text-decoration: none;
+    margin: 10px 0; /* Espacement vertical */
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #ffe6f0; /* Couleur de fond doux pour les liens */
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+    color: #fff; /* Texte blanc au survol */
+    background-color: #ff6bcb; /* Fond rose plus intense */
+    transform: scale(1.05); /* Légère animation de survol */
+}
+
+/* Effet de mise en valeur des liens */
+a::before {
+    content: "• "; /* Symbole décoratif */
+    color: #ff6bcb;
+}
+
+/* Styles pour écrans plus petits */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    a {
+        font-size: 1em;
+    }
+
+    .section {
+        width: 95%; /* Ajustement de la largeur pour les petits écrans */
+    }
+}
+
+
