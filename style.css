@@ -1,93 +1,89 @@
-/* Styles de base */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #ffe6e6; 
     margin: 0;
-    padding: 0;
-    background-color: #ffccff; /* Couleur rose pâle */
-    color: #333;
-}
-
-/* Titre de la page */
-h1 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-top: 20px;
-    color: #ff6bcb; /* Rose vif */
-}
-
-/* Conteneur central pour aligner le contenu */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-}
-
-/* Sections */
-.section {
-    background-color: #ffffff; /* Fond blanc pour les sections */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
     padding: 20px;
-    margin: 20px 0;
-    width: 80%; /* Largeur de la section */
+    color: #333;
+    display: flex;
+    justify-content: center;
 }
-
-/* Titre des sections */
+.main-container {
+    background-color: #ffb3ba; 
+    padding: 30px;
+    border: 2px solid #ff99a1; 
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+}
+.container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+}
+.block {
+    background-color: #ffccd5; 
+    border: 1px solid #ff99a1; 
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
 h2 {
-    color: #ff6bcb; /* Rose vif */
-    text-align: center;
-    font-size: 2em;
+    font-size: 20px;
+    color: #d46a6a;
+    margin-bottom: 15px;
 }
-
-/* Liste des devoirs */
-.assignment-list {
-    list-style-type: none; /* Pas de puces */
-    padding: 0; /* Pas de padding */
+.personal-info {
+    overflow: auto;
+    background-color: #ffb3ba;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
-
-/* Style des liens */
-a {
-    display: block; /* Liens sur toute la largeur */
-    font-size: 1.2em;
-    color: #ff85a2; /* Rose pastel pour les liens */
+.photo {
+    float: left;
+    margin-right: 20px;
+}
+.photo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #ff99a1;
+}
+.info h1 {
+    font-size: 24px;
+    color: #d46a6a;
+}
+.info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+.item {
+    overflow: auto;
+    margin-bottom: 10px;
+}
+.date {
+    float: left;
+    width: 30%;
+    font-weight: bold;
+    color: #a64d4d;
+}
+.description {
+    float: left;
+    width: 65%;
+    margin-left: 5%;
+}
+.block6 a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffc1cc; 
+    color: #a83256; 
     text-decoration: none;
-    margin: 10px 0; /* Espacement vertical */
-    padding: 8px 15px;
     border-radius: 5px;
-    background-color: #ffe6f0; /* Couleur de fond doux pour les liens */
-    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    border: 1px solid #a83256; 
+    margin-top: 20px;
 }
 
-a:hover {
-    color: #fff; /* Texte blanc au survol */
-    background-color: #ff6bcb; /* Fond rose plus intense */
-    transform: scale(1.05); /* Légère animation de survol */
-}
 
-/* Effet de mise en valeur des liens */
-a::before {
-    content: "• "; /* Symbole décoratif */
-    color: #ff6bcb;
-}
 
-/* Styles pour écrans plus petits */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.5em;
-    }
-
-    a {
-        font-size: 1em;
-    }
-
-    .section {
-        width: 95%; /* Ajustement de la largeur pour les petits écrans */
-    }
-}
 
 
