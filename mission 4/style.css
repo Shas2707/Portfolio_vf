@@ -98,7 +98,7 @@ body{
     }
     
     .card {
-        background-color: #fff;
+        background-color: #d8e1e6;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 20px;
@@ -115,7 +115,7 @@ body{
     
     .card h3 {
         font-size: 18px;
-        color: #666;
+        color: #535051;
         margin-bottom: 15px;
     }
     
@@ -135,4 +135,17 @@ body{
     
     .social-links a:hover {
         color: #0073e6;
+    }
+    .block6 {
+        text-align: center; 
+        margin-top: 20px; 
+    }
+    .block6 a {
+        display: inline-block; 
+        padding: 10px 20px; 
+        background-color: #1ad8f1; 
+        color: rgb(214, 229, 233); 
+        text-decoration: none; 
+        border-radius: 5px; 
+        border: 1px solid rgb(4, 53, 82); 
     }
