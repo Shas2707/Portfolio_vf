@@ -1,6 +1,6 @@
 /* Style de base */
 body {
-    background-color: #ffe0b3; /* Couleur de fond chaude pour rappeler le thème de la nourriture */
+    background-color: #ffedd5;
     font-family: 'Arial', sans-serif;
     display: flex;
     align-items: center;
@@ -15,10 +15,10 @@ body {
     width: 90%;
     max-width: 400px;
     background-color: #fff3e0;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    border: 2px solid #ff8c00; /* Couleur vive pour rappeler le thème fast food */
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    border: 3px solid #ff8c00;
 }
 
 /* En-tête */
@@ -30,23 +30,39 @@ h1 {
 
 .subtitle {
     color: #ff8c00;
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-bottom: 20px;
     font-style: italic;
 }
 
-/* Styles des champs de saisie */
+/* Champs de saisie */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    color: #e85a00;
+    font-weight: bold;
+}
+
 input[type="text"], input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ff8c00;
-    border-radius: 5px;
+    border: 2px solid #ff8c00;
+    border-radius: 8px;
     font-size: 1em;
+    background-color: #fff8e5;
 }
 
-/* Style des boutons */
+/* Boutons */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
 button {
     width: 45%;
     padding: 10px;
@@ -54,26 +70,30 @@ button {
     color: #fff;
     background-color: #ff8c00;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
     background-color: #e85a00;
+    transform: scale(1.05);
 }
 
-/* Style des images */
+/* Icônes de nourriture */
 .food-icons {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
-.food-icons img {
-    width: 50px;
-    margin: 0 5px;
+.food-icons i {
+    font-size: 40px;
+    color: #e85a00;
+    margin: 0 8px;
     transition: transform 0.3s;
 }
 
-.food-icons img:hover {
-    transform: scale(1.1);
+.food-icons i:hover {
+    transform: scale(1.2);
+    color: #ff8c00;
 }
+
