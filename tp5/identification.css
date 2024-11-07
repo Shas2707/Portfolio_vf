@@ -1,0 +1,79 @@
+/* Style de base */
+body {
+    background-color: #ffe0b3; /* Couleur de fond chaude pour rappeler le thème de la nourriture */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Conteneur principal */
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    background-color: #fff3e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border: 2px solid #ff8c00; /* Couleur vive pour rappeler le thème fast food */
+}
+
+/* En-tête */
+h1 {
+    color: #e85a00;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #ff8c00;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* Styles des champs de saisie */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ff8c00;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Style des boutons */
+button {
+    width: 45%;
+    padding: 10px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #ff8c00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e85a00;
+}
+
+/* Style des images */
+.food-icons {
+    margin-top: 15px;
+}
+
+.food-icons img {
+    width: 50px;
+    margin: 0 5px;
+    transition: transform 0.3s;
+}
+
+.food-icons img:hover {
+    transform: scale(1.1);
+}

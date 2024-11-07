@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Fast Food</title>
+    <link rel="stylesheet" href="identification.css"> 
     <script src="identification.js"></script>
-    <title> Connexion</title>
 </head>
-<body bgcolor="pink">
-    <br>
-    <hr width="90%">
-    <center> <u> <h1> Identification</h1></u></center>
-    <center>
-        <b> <label> Username </label></b>
-        <input type="text" name="t1" id="t1">
-        <br>
-        <br>
-        <b><label>MOT DE PASSE</label></b>
-        <input type="password" name="h1" id="h1">
-        <br>
-        <br>
-        <button onclick="login ()"> Se connecter</button>
-        <button onclick="retour()">Annuler</button>
-    </center>
+<body>
+    <div class="container">
+        <h1>🍔 Fast Food Login 🍟</h1>
+        <p class="subtitle">Connexion à votre compte gourmand</p>
+
+        <label for="t1"><b>Nom d'utilisateur</b></label>
+        <input type="text" name="t1" id="t1" placeholder="Entrez votre nom d'utilisateur">
+
+        <label for="h1"><b>Mot de passe</b></label>
+        <input type="password" name="h1" id="h1" placeholder="Entrez votre mot de passe">
+
+        <div>
+            <button onclick="login()">Se connecter</button>
+            <button onclick="retour()">Annuler</button>
+        </div>
+
+        <div class="food-icons">
+            <img src="https://img.icons8.com/color/48/000000/hamburger.png" alt="Hamburger">
+            <img src="https://img.icons8.com/color/48/000000/fries.png" alt="Frites">
+            <img src="https://img.icons8.com/color/48/000000/pizza.png" alt="Pizza">
+            <img src="https://img.icons8.com/color/48/000000/soft-drink.png" alt="Soda">
+        </div>
+    </div>
 </body>
 </html>
