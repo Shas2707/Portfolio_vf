@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facture Thème Mer</title>
+    <link rel="stylesheet" href="tp.css">
+    <script src="tp.js"></script>
+</head>
+<body>
+    <center>
+        <h1>Facture</h1>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Article</th>
+                    <th>Prix unitaire</th>
+                    <th>Quantité</th>
+                    <th>Résultat</th>
+                </tr>
+                <tr>
+                    <td>Article 1</td>
+                    <td><input type="number" id="prix1" placeholder="0"></td>
+                    <td><input type="number" id="quantite1" placeholder="0"></td>
+                    <td><input type="text" id="resultat1" readonly></td>
+                </tr>
+                <tr>
+                    <td>Article 2</td>
+                    <td><input type="number" id="prix2" placeholder="0"></td>
+                    <td><input type="number" id="quantite2" placeholder="0"></td>
+                    <td><input type="text" id="resultat2" readonly></td>
+                </tr>
+                <tr>
+                    <td>Article 3</td>
+                    <td><input type="number" id="prix3" placeholder="0"></td>
+                    <td><input type="number" id="quantite3" placeholder="0"></td>
+                    <td><input type="text" id="resultat3" readonly></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: right;"><strong>Total TTC</strong></td>
+                    <td><input type="text" id="total" readonly></td>
+                </tr>
+            </table>
+        </div>
+        <div class="buttons">
+            <button onclick="reinitialiser()">Réinitialiser</button>
+            <button onclick="calculer()">Calculer</button>
+            <button onclick="retour()">Retour au sommaire</button>
+        </div>
+    </center>
+</body>
+</html>
+
