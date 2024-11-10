@@ -7,34 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Lecteur YouTube invisible pour la musique d'introduction -->
-    <iframe 
-        id="introMusic" 
-        width="0" 
-        height="0" 
-        src="https://www.youtube.com/embed/aemW1vYld-Q?autoplay=1&controls=0&mute=0" 
-        start="0.18"
-        title="Musique d'introduction" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen 
-        style="display:none;">
-    </iframe>
-
-    <!-- Lecteur YouTube invisible pour la musique des TP et missions -->
-    <iframe 
-        id="taskMusic" 
-        width="0" 
-        height="0" 
-        src="" 
-        title="Musique TP et Missions" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen 
-        style="display:none;">
-    </iframe>
-
-    <div class="main-wrapper">
+    <div id="introScreen" class="intro-screen">
+        <h1>Bienvenue sur le Portfolio d'Alihonou Sharon</h1>
+        <p>Chargement temps d'attendes estimé à 15 secondes...</p>
+    </div>
+    <div id="mainContent" class="main-wrapper" style="display: none;">
         <header class="header">
             <h1>Alihonou Sharon</h1>
             <p>Développeuse Web et Créatrice de Solutions Digitales</p>
@@ -44,25 +21,25 @@
             <section class="section">
                 <h2>Travaux Pratiques</h2>
                 <div class="card-list">
-                    <a href="tp1/index.html" class="card" onclick="playTaskMusic(event)">TP1</a>
-                    <a href="tp1_js/index.html" class="card" onclick="playTaskMusic(event)">TP1_JS</a>
-                    <a href="tp1bd/index.html" class="card" onclick="playTaskMusic(event)">TP1 Base de données</a>
-                    <a href="tp2/index.html" class="card" onclick="playTaskMusic(event)">TP2</a>
-                    <a href="tp3/index.html" class="card" onclick="playTaskMusic(event)">TP3</a>
-                    <a href="tp4/index.html" class="card" onclick="playTaskMusic(event)">TP4</a>
-                    <a href="tp5/identification.html" class="card" onclick="playTaskMusic(event)">TP6</a>
-                    <a href="tp6/calculatrice.html" class="card" onclick="playTaskMusic(event)">TP7</a>
-                    <a href="tp facture/tp.html" class="card" onclick="playTaskMusic(event)">TP FACTURE</a>
+                    <a href="tp1/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp')">TP1</a>
+                    <a href="tp1_js/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp')">TP1_JS</a>
+                    <a href="tp1bd/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp')">TP1 Base de données</a>
+                    <a href="tp2/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp')">TP2</a>
+                    <a href="tp3/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp')">TP3</a>
+                    <a href="tp4/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp')">TP4</a>
+                    <a href="tp5/identification.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp')">TP6</a>
+                    <a href="tp6/calculatrice.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp')">TP7</a>
+                    <a href="tp facture/tp.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp')">TP FACTURE</a>
                 </div>
             </section>
             <section class="section">
                 <h2>MISSIONS & CERTIFICATIONS</h2>
                 <div class="card-list">
-                    <a href="mission1/index.html" class="card" onclick="playTaskMusic(event)">MISSION 1</a>
-                    <a href="mission2/index.html" class="card" onclick="playTaskMusic(event)">MISSION 2</a>
-                    <a href="mission3/index.html" class="card" onclick="playTaskMusic(event)">MISSION 3 - CERTIFICATION RGPD</a>
-                    <a href="mission4/index.html" class="card" onclick="playTaskMusic(event)">MISSION 4</a>
-                    <a href="mission5/index.html" class="card" onclick="playTaskMusic(event)">MISSION 5</a>
+                    <a href="mission1/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission')">MISSION 1</a>
+                    <a href="mission2/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission')">MISSION 2</a>
+                    <a href="mission3/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission')">MISSION 3 - CERTIFICATION RGPD</a>
+                    <a href="mission4/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission')">MISSION 4</a>
+                    <a href="mission5/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission')">MISSION 5</a>
                 </div>
             </section>
         </div>
@@ -72,30 +49,120 @@
             <p>&copy; 2024 Alihonou Sharon - Tous droits réservés</p>
         </footer>
     </div>
+    <script src="https://www.youtube.com/iframe_api"></script>
 
     <script>
-        // Fonction pour jouer la musique d'introduction
-        window.onload = function() {
-            const iframe = document.getElementById('introMusic');
-            iframe.src = "https://www.youtube.com/embed/aemW1vYld-Q?autoplay=1&controls=0&mute=0"; // Joue la musique d'introduction
-        };
+        let introPlayer, tpPlayer, missionPlayer;
+        function onYouTubeIframeAPIReady() {
+            introPlayer = new YT.Player('introMusic', {
+                videoId: '8-PqB7SxQEQ',
+                events: {
+                    'onReady': handleIntroPlayback
+                }
+            });
 
-        // Fonction pour jouer la musique des TP et missions
-        function playTaskMusic(event) {
-            event.preventDefault(); // Empêche la redirection du lien
-            const iframe = document.getElementById('taskMusic');
-            iframe.style.display = 'block'; // Affiche l'iframe pour démarrer le son des missions/TP
-            iframe.src = "https://www.youtube.com/embed/uLHqpjW3aDs?autoplay=1&controls=0&mute=0&start=16"; // Joue la nouvelle musique à partir de 16 secondes
+            tpPlayer = new YT.Player('tpMusic', {
+                videoId: 'e5WC-9TbjjQ'
+            });
 
-            // Arrête la musique et redirige après 5 secondes
+            missionPlayer = new YT.Player('missionMusic', {
+                videoId: 'hVBEriR7_G8'
+            });
+        }
+        function handleIntroPlayback(event) {
+            const params = new URLSearchParams(window.location.search);
+            const skipIntro = params.has('skipIntro');
+            
+            if (skipIntro) {
+                document.getElementById('introScreen').style.display = "none";
+                document.getElementById('mainContent').style.display = "block";
+            } else {
+                introPlayer.playVideo();
+                setTimeout(() => {
+                    introPlayer.stopVideo();
+                    document.getElementById('introScreen').style.display = "none";
+                    document.getElementById('mainContent').style.display = "block";
+                }, 10000); 
+            }
+        }
+        function playTaskMusic(event, type) {
+            event.preventDefault();
+            
+            if (type === 'tp') {
+                tpPlayer.seekTo(51); 
+                tpPlayer.playVideo();
+            } else {
+                missionPlayer.seekTo(62); 
+                missionPlayer.playVideo();
+            }
             setTimeout(() => {
-                iframe.src = ""; // Réinitialise l'iframe pour arrêter la musique
-                iframe.style.display = 'none'; // Cache l'iframe
-                window.location.href = event.target.href; // Redirige vers le lien cible
-            }, 5000); // 5 secondes
+                if (type === 'tp') {
+                    tpPlayer.stopVideo();
+                } else {
+                    missionPlayer.stopVideo();
+                }
+                window.location.href = event.target.href;
+            }, 5000); 
         }
     </script>
+    <div id="introMusic" style="display: none;"></div>
+    <div id="tpMusic" style="display: none;"></div>
+    <div id="missionMusic" style="display: none;"></div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        let introPlayer, tpPlayer, missionPlayer;
+    
+        function onYouTubeIframeAPIReady() {
+            introPlayer = new YT.Player('introMusic', {
+                videoId: '8-PqB7SxQEQ',
+                events: {
+                    'onReady': handleIntroPlayback
+                }
+            });
+            tpPlayer = new YT.Player('tpMusic', {
+                videoId: 'e5WC-9TbjjQ'
+            });
+            missionPlayer = new YT.Player('missionMusic', {
+                videoId: 'hVBEriR7_G8'
+            });
+        }
+    
+        function handleIntroPlayback(event) {
+            const params = new URLSearchParams(window.location.search);
+            const skipIntro = params.has('skipIntro');
+    
+            if (skipIntro) {
+                document.getElementById('introScreen').style.display = "none";
+                document.getElementById('mainContent').style.display = "block";
+            } else {
+                introPlayer.playVideo();
+                setTimeout(() => {
+                    introPlayer.stopVideo();
+                    document.getElementById('introScreen').style.display = "none";
+                    document.getElementById('mainContent').style.display = "block";
+                }, 10000);  
+            }
+        }
+    
+        function playTaskMusic(event, type) {
+            event.preventDefault();
+            if (type === 'tp') {
+                tpPlayer.seekTo(51);
+                tpPlayer.playVideo();
+            } else {
+                missionPlayer.seekTo(62);
+                missionPlayer.playVideo();
+            }
+            setTimeout(() => {
+                if (type === 'tp') {
+                    tpPlayer.stopVideo();
+                } else {
+                    missionPlayer.stopVideo();
+                }
+                window.location.href = event.target.href;
+            }, 5000);
+        }
+    </script>    
 </body>
 </html>
-
-

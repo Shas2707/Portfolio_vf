@@ -22,6 +22,12 @@ function calculerTotal() {
     var resultat3 = Number(document.getElementById("resultat3").value);
     document.getElementById("total").value = (resultat1 + resultat2 + resultat3).toFixed(2);
 }
+function calculer() {
+    calculerArticle1();
+    calculerArticle2();
+    calculerArticle3();
+    calculerTotal();
+}
 
 function reinitialiser() {
     document.getElementById("prix1").value = "";
@@ -35,7 +41,6 @@ function reinitialiser() {
     document.getElementById("resultat3").value = "";
     document.getElementById("total").value = "";
 }
-
 function retour() {
-    window.location.href = "tp.html";
+    window.location.href = "../index.html?skipIntro=true"; 
 }
