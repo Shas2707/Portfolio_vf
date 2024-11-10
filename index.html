@@ -50,9 +50,12 @@
     </div>
     <script src="https://www.youtube.com/iframe_api"></script>
 
-    <script>
+    <script> 
         let introPlayer;
         const players = {}; 
+        const params = new URLSearchParams(window.location.search);
+        const skipIntro = params.has('skipIntro');
+        console.log('Skip Intro:', skipIntro);  
 
         function onYouTubeIframeAPIReady() {
             introPlayer = new YT.Player('introMusic', {
@@ -78,8 +81,7 @@
         }
 
         function handleIntroPlayback(event) {
-            const params = new URLSearchParams(window.location.search);
-            const skipIntro = params.has('skipIntro');
+            const skipIntro = new URLSearchParams(window.location.search).has('skipIntro');
             
             if (skipIntro) {
                 document.getElementById('introScreen').style.display = "none";
@@ -93,41 +95,42 @@
                 }, 10000); 
             }
         }
-
         function playTaskMusic(event, id, startSeconds, durationSeconds) {
-            event.preventDefault();
+            event.preventDefault(); 
             players[id].seekTo(startSeconds);
             players[id].playVideo();
+           
             setTimeout(() => {
                 players[id].stopVideo();
-                window.location.href = event.target.href;
-            }, durationSeconds * 1000); 
+                window.location.href = event.target.href; 
+            }, durationSeconds * 1000);
+        } 
+        function handleIntroPlayback(event) {
+            const params = new URLSearchParams(window.location.search);
+            const skipIntro = params.has('skipIntro'); 
+
+            if (skipIntro) {
+                document.getElementById('introScreen').style.display = "none";
+                document.getElementById('mainContent').style.display = "block";
+                introPlayer.stopVideo(); 
+            } else {
+                introPlayer.playVideo(); 
+                setTimeout(() => {
+                    introPlayer.stopVideo();
+                    document.getElementById('introScreen').style.display = "none";
+                    document.getElementById('mainContent').style.display = "block";
+                }, 10000); 
+            }
         }
         function playTaskMusic(event, id, startSeconds, durationSeconds) {
-    event.preventDefault();
-    players[id].seekTo(startSeconds);  
-    setTimeout(() => {
-        players[id].stopVideo();  
-        window.location.href = event.target.href;  
-    }, durationSeconds * 1000); 
-}
-function handleIntroPlayback(event) {
-    const params = new URLSearchParams(window.location.search);
-    const skipIntro = params.has('skipIntro');
-    
-    if (skipIntro) {
-        document.getElementById('introScreen').style.display = "none";
-        document.getElementById('mainContent').style.display = "block";
-    } else {
-        introPlayer.playVideo();
-        setTimeout(() => {
-            introPlayer.stopVideo();
-            document.getElementById('introScreen').style.display = "none";
-            document.getElementById('mainContent').style.display = "block";
-        }, 10000); 
-    }
-}
-
+            event.preventDefault();
+            players[id].seekTo(startSeconds); 
+            players[id].playVideo(); 
+            setTimeout(() => {
+                players[id].stopVideo(); 
+                window.location.href = event.target.href; 
+            }, durationSeconds * 1000); 
+        }
     </script>
     <div id="introMusic" style="display: none;"></div>
     <div id="tp1Music" style="display: none;"></div>
@@ -144,7 +147,6 @@ function handleIntroPlayback(event) {
     <div id="mission3Music" style="display: none;"></div>
     <div id="mission4Music" style="display: none;"></div>
     <div id="mission5Music" style="display: none;"></div>
-
 </body>
 </html>
 
