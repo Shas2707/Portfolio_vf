@@ -54,6 +54,7 @@
     <script>
         let introPlayer;
         const players = {}; 
+
         function onYouTubeIframeAPIReady() {
             introPlayer = new YT.Player('introMusic', {
                 videoId: '8-PqB7SxQEQ',
@@ -69,11 +70,12 @@
             players['tp4'] = new YT.Player('tp4Music', { videoId: 'aemW1vYld-Q' });
             players['tp5'] = new YT.Player('tp5Music', { videoId: 'BvyyBaRH7lc' });
             players['tp6'] = new YT.Player('tp6Music', { videoId: 'cRJ3pHXOEQQ' });
-            players['tp_facture'] = new YT.Player('tp_factureMusic', { videoId: 'obUHDyWFMi8' });
+            players['tp_facture'] = new YT.Player('tp_factureMusic', { videoId: 'LjxulQ1bEWg' });
             players['mission1'] = new YT.Player('mission1Music', { videoId: '1XzY2ij_vL4' });
             players['mission2'] = new YT.Player('mission2Music', { videoId: 'cwQgjq0mCdE' });
             players['mission3'] = new YT.Player('mission3Music', { videoId: 'KK4dC7rASYs' });
             players['mission4'] = new YT.Player('mission4Music', { videoId: 'znlFu_lemsU' });
+            players['mission5'] = new YT.Player('mission5Music', { videoId: 'obUHDyWFMi8' });
         }
 
         function handleIntroPlayback(event) {
@@ -92,6 +94,7 @@
                 }, 10000); 
             }
         }
+
         function playTaskMusic(event, id, startSeconds, durationSeconds) {
             event.preventDefault();
             players[id].seekTo(startSeconds);
@@ -116,6 +119,8 @@
     <div id="mission2Music" style="display: none;"></div>
     <div id="mission3Music" style="display: none;"></div>
     <div id="mission4Music" style="display: none;"></div>
+    <div id="mission5Music" style="display: none;"></div>
 </body>
 </html>
+
 
