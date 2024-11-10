@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="introScreen" class="intro-screen">
+    <div id="introScreen" class="intro-screen" >
         <h1>Bienvenue sur le Portfolio d'Alihonou Sharon</h1>
         <p>Chargement le temps d'attente est estimé à 15-20 secondes...</p>
     </div>
@@ -25,7 +25,7 @@
                     <a href="tp1bd/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp1bd', 16, 5)">TP1 Base de données</a>
                     <a href="tp2/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp2', 0, 5)">TP2</a>
                     <a href="tp3/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp3', 38, 5)">TP3</a>
-                    <a href="tp4/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp4', 9, 5)">TP4</a>
+                    <a href="tp4/index.html" class="card" onclick="playTaskMusic(event, 'tp4', 9, 5)">TP4</a>
                     <a href="tp5/identification.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp5', 50, 5)">TP5</a>
                     <a href="tp6/calculatrice.html?skipIntro=true"class="card" onclick="playTaskMusic(event, 'tp6', 33, 5)">TP6</a>
                     <a href="tpfacture/tp.html?skipIntro=true"class="card" onclick="playTaskMusic(event, 'tp_facture', 0, 5)">TP Facture</a>
@@ -104,33 +104,8 @@
                 players[id].stopVideo();
                 window.location.href = event.target.href; 
             }, durationSeconds * 1000);
-        } 
-        function handleIntroPlayback(event) {
-            const params = new URLSearchParams(window.location.search);
-            const skipIntro = params.has('skipIntro'); 
 
-            if (skipIntro) {
-                document.getElementById('introScreen').style.display = "none";
-                document.getElementById('mainContent').style.display = "block";
-                introPlayer.stopVideo(); 
-            } else {
-                introPlayer.playVideo(); 
-                setTimeout(() => {
-                    introPlayer.stopVideo();
-                    document.getElementById('introScreen').style.display = "none";
-                    document.getElementById('mainContent').style.display = "block";
-                }, 10000); 
-            }
-        }
-        function playTaskMusic(event, id, startSeconds, durationSeconds) {
-            event.preventDefault();
-            players[id].seekTo(startSeconds); 
-            players[id].playVideo(); 
-            setTimeout(() => {
-                players[id].stopVideo(); 
-                window.location.href = event.target.href; 
-            }, durationSeconds * 1000); 
-        }
+        } 
     </script>
     <div id="introMusic" style="display: none;"></div>
     <div id="tp1Music" style="display: none;"></div>
