@@ -27,17 +27,17 @@
                     <a href="tp2/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp2', 0, 5)">TP2</a>
                     <a href="tp3/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp3', 38, 5)">TP3</a>
                     <a href="tp4/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp4', 9, 5)">TP4</a>
-                    <a href="tp5/identification.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp5', 50, 5)">TP6</a>
-                    <a href="tp6/calculatrice.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp6', 33, 5)">TP7</a>
-                    <a href="tp facture/tp.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp_facture', 0, 5)">TP FACTURE</a>
+                    <a href="tp5/identification.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp5', 50, 5)">TP5</a>
+                    <a href="tp6/calculatrice.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp6', 33, 5)">TP6</a>
+                    <a href="tp_facture/tp.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp_facture', 0, 5)">TP Facture</a>
                 </div>
             </section>
             <section class="section">
                 <h2>MISSIONS & CERTIFICATIONS</h2>
                 <div class="card-list">
                     <a href="mission1/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission1', 11, 5)">MISSION 1</a>
-                    <a href="mission2/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission2', 0, 5)">MISSION 2</a>
-                    <a href="mission3/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission3', 0, 5)">MISSION 3 - CERTIFICATION RGPD</a>
+                    <a href="mission2/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission2', 10, 5)">MISSION 2</a>
+                    <a href="mission3/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission3', 66, 5)">MISSION 3 - CERTIFICATION RGPD</a>
                     <a href="mission4/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission4', 0, 5)">MISSION 4</a>
                     <a href="mission5/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission5', 0, 5)">MISSION 5</a>
                 </div>
@@ -69,8 +69,11 @@
             players['tp4'] = new YT.Player('tp4Music', { videoId: 'aemW1vYld-Q' });
             players['tp5'] = new YT.Player('tp5Music', { videoId: 'BvyyBaRH7lc' });
             players['tp6'] = new YT.Player('tp6Music', { videoId: 'cRJ3pHXOEQQ' });
-            players['tp_facture'] = new YT.Player('tp_factureMusic', { videoId: 'LjxulQ1bEWg' });
+            players['tp_facture'] = new YT.Player('tp_factureMusic', { videoId: 'obUHDyWFMi8' });
             players['mission1'] = new YT.Player('mission1Music', { videoId: '1XzY2ij_vL4' });
+            players['mission2'] = new YT.Player('mission2Music', { videoId: 'cwQgjq0mCdE' });
+            players['mission3'] = new YT.Player('mission3Music', { videoId: 'KK4dC7rASYs' });
+            players['mission4'] = new YT.Player('mission4Music', { videoId: 'znlFu_lemsU' });
         }
 
         function handleIntroPlayback(event) {
@@ -89,7 +92,6 @@
                 }, 10000); 
             }
         }
-
         function playTaskMusic(event, id, startSeconds, durationSeconds) {
             event.preventDefault();
             players[id].seekTo(startSeconds);
@@ -100,7 +102,6 @@
             }, durationSeconds * 1000); 
         }
     </script>
-
     <div id="introMusic" style="display: none;"></div>
     <div id="tp1Music" style="display: none;"></div>
     <div id="tp1_jsMusic" style="display: none;"></div>
@@ -112,5 +113,9 @@
     <div id="tp6Music" style="display: none;"></div>
     <div id="tp_factureMusic" style="display: none;"></div>
     <div id="mission1Music" style="display: none;"></div>
+    <div id="mission2Music" style="display: none;"></div>
+    <div id="mission3Music" style="display: none;"></div>
+    <div id="mission4Music" style="display: none;"></div>
 </body>
 </html>
+
