@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Alihonou Sharon</title>
+    <title>Portfolio - Alihonou Sharon</title>
     <link rel="stylesheet" href="style.css">
-</head>
 <body>
-    <div id="introScreen" class="intro-screen" >
-        <h1>Bienvenue sur le Portfolio d'Alihonou Sharon</h1>
-        <p>Chargement le temps d'attente est estimé à 15-20 secondes...</p>
-    </div>
-    <div id="mainContent" class="main-wrapper" style="display: none;">
-        <header class="header">
-            <h1>Alihonou Sharon</h1>
-            <p>Développeuse Web et Créatrice de Solutions Digitales</p>
-        </header>
-         <div class="container">
-            <section class="section">
-                <h2>Travaux Pratiques</h2>
+    <header>
+        <h1>Bienvenue sur le Portfolio de Sharon Alihonou</h1>
+        <p>Développeuse Web & Passionnée de Technologie</p>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Liens Importants</h2>
+            <a href="https://www.linkedin.com/in/sharon-alihonou-2478b4318" target="_blank"><button>LinkedIn</button></a>
+        </section>
+        
+        <section>
+            <h2>Travaux Pratiques</h2>
+            <ul>
                 <div class="card-list">
                     <a href="tp1/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp1', 2.03, 5)">TP1</a>
                     <a href="tp1_js/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'tp1_js', 10, 5)">TP1_JS</a>
@@ -32,97 +33,131 @@
                 </div>
             </section>
             <section class="section">
-                <h2>MISSIONS & CERTIFICATIONS</h2>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Missions & Certifications</h2>
+            <ul>
                 <div class="card-list">
                     <a href="mission1/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission1', 11, 5)">MISSION 1</a>
                     <a href="mission2/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission2', 10, 5)">MISSION 2</a>
                     <a href="mission3/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission3', 66, 5)">MISSION 3 - CERTIFICATION RGPD</a>
                     <a href="mission4/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission4', 0, 5)">MISSION 4</a>
                     <a href="mission5/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission5', 0, 5)">MISSION 5</a>
+                    <a href="certification cyber-sécurité/index.html?skipIntro=true" class="card" onclick="playTaskMusic(event, 'mission5', 0, 5)">MISSION 6- Certification cyber-sécurité</a>
                 </div>
             </section>
         </div>
-        
-        <footer class="footer">
-            <p>Contact : sharonalihonou@gmail.com</p>
-            <p>&copy; 2024 Alihonou Sharon - Tous droits réservés</p>
-        </footer>
-    </div>
-    <script src="https://www.youtube.com/iframe_api"></script>
 
-    <script> 
-        let introPlayer;
-        const players = {}; 
-        const params = new URLSearchParams(window.location.search);
-        const skipIntro = params.has('skipIntro');
-        console.log('Skip Intro:', skipIntro);  
+        <script src="https://www.youtube.com/iframe_api"></script>
 
-        function onYouTubeIframeAPIReady() {
-            introPlayer = new YT.Player('introMusic', {
-                videoId: '8-PqB7SxQEQ',
-                events: {
-                    'onReady': handleIntroPlayback
-                }
-            });
-            players['tp1'] = new YT.Player('tp1Music', { videoId: 'e5WC-9TbjjQ' });
-            players['tp1_js'] = new YT.Player('tp1_jsMusic', { videoId: 'ZoIuCuheg34' });
-            players['tp1bd'] = new YT.Player('tp1bdMusic', { videoId: 'zvFhQTAhG48' });
-            players['tp2'] = new YT.Player('tp2Music', { videoId: 'ru3iyhV7e28' });
-            players['tp3'] = new YT.Player('tp3Music', { videoId: 'dYaw-6UIDdY' });
-            players['tp4'] = new YT.Player('tp4Music', { videoId: 'aemW1vYld-Q' });
-            players['tp5'] = new YT.Player('tp5Music', { videoId: 'BvyyBaRH7lc' });
-            players['tp6'] = new YT.Player('tp6Music', { videoId: 'cRJ3pHXOEQQ' });
-            players['tp_facture'] = new YT.Player('tp_factureMusic', { videoId: 'LjxulQ1bEWg' });
-            players['mission1'] = new YT.Player('mission1Music', { videoId: '1XzY2ij_vL4' });
-            players['mission2'] = new YT.Player('mission2Music', { videoId: 'cwQgjq0mCdE' });
-            players['mission3'] = new YT.Player('mission3Music', { videoId: 'KK4dC7rASYs' });
-            players['mission4'] = new YT.Player('mission4Music', { videoId: 'znlFu_lemsU' });
-            players['mission5'] = new YT.Player('mission5Music', { videoId: 'obUHDyWFMi8' });
-        }
-
-        function handleIntroPlayback(event) {
-            const skipIntro = new URLSearchParams(window.location.search).has('skipIntro');
-            
-            if (skipIntro) {
-                document.getElementById('introScreen').style.display = "none";
-                document.getElementById('mainContent').style.display = "block";
-            } else {
-                introPlayer.playVideo();
-                setTimeout(() => {
-                    introPlayer.stopVideo();
+        <script> 
+            let introPlayer;
+            const players = {}; 
+            const params = new URLSearchParams(window.location.search);
+            const skipIntro = params.has('skipIntro');
+            console.log('Skip Intro:', skipIntro);  
+    
+            function onYouTubeIframeAPIReady() {
+                introPlayer = new YT.Player('introMusic', {
+                    videoId: '8-PqB7SxQEQ',
+                    events: {
+                        'onReady': handleIntroPlayback
+                    }
+                });
+                players['tp1'] = new YT.Player('tp1Music', { videoId: 'e5WC-9TbjjQ' });
+                players['tp1_js'] = new YT.Player('tp1_jsMusic', { videoId: 'ZoIuCuheg34' });
+                players['tp1bd'] = new YT.Player('tp1bdMusic', { videoId: 'zvFhQTAhG48' });
+                players['tp2'] = new YT.Player('tp2Music', { videoId: 'ru3iyhV7e28' });
+                players['tp3'] = new YT.Player('tp3Music', { videoId: 'dYaw-6UIDdY' });
+                players['tp4'] = new YT.Player('tp4Music', { videoId: 'aemW1vYld-Q' });
+                players['tp5'] = new YT.Player('tp5Music', { videoId: 'BvyyBaRH7lc' });
+                players['tp6'] = new YT.Player('tp6Music', { videoId: 'cRJ3pHXOEQQ' });
+                players['tp_facture'] = new YT.Player('tp_factureMusic', { videoId: 'LjxulQ1bEWg' });
+                players['mission1'] = new YT.Player('mission1Music', { videoId: '1XzY2ij_vL4' });
+                players['mission2'] = new YT.Player('mission2Music', { videoId: 'cwQgjq0mCdE' });
+                players['mission3'] = new YT.Player('mission3Music', { videoId: 'KK4dC7rASYs' });
+                players['mission4'] = new YT.Player('mission4Music', { videoId: 'znlFu_lemsU' });
+                players['mission5'] = new YT.Player('mission5Music', { videoId: 'obUHDyWFMi8' });
+            }
+    
+            function handleIntroPlayback(event) {
+                const skipIntro = new URLSearchParams(window.location.search).has('skipIntro');
+                
+                if (skipIntro) {
                     document.getElementById('introScreen').style.display = "none";
                     document.getElementById('mainContent').style.display = "block";
-                }, 10000); 
+                } else {
+                    introPlayer.playVideo();
+                    setTimeout(() => {
+                        introPlayer.stopVideo();
+                        document.getElementById('introScreen').style.display = "none";
+                        document.getElementById('mainContent').style.display = "block";
+                    }, 10000); 
+                }
             }
+            function playTaskMusic(event, id, startSeconds, durationSeconds) {
+                event.preventDefault(); 
+                players[id].seekTo(startSeconds);
+                players[id].playVideo();
+               
+                setTimeout(() => {
+                    players[id].stopVideo();
+                    window.location.href = event.target.href; 
+                }, durationSeconds * 1000);
+    
+            } 
+        </script>
+        <div id="introMusic" style="display: none;"></div>
+        <div id="tp1Music" style="display: none;"></div>
+        <div id="tp1_jsMusic" style="display: none;"></div>
+        <div id="tp1bdMusic" style="display: none;"></div>
+        <div id="tp2Music" style="display: none;"></div>
+        <div id="tp3Music" style="display: none;"></div>
+        <div id="tp4Music" style="display: none;"></div>
+        <div id="tp5Music" style="display: none;"></div>
+        <div id="tp6Music" style="display: none;"></div>
+        <div id="tp_factureMusic" style="display: none;"></div>
+        <div id="mission1Music" style="display: none;"></div>
+        <div id="mission2Music" style="display: none;"></div>
+        <div id="mission3Music" style="display: none;"></div>
+        <div id="mission4Music" style="display: none;"></div>
+        <div id="mission5Music" style="display: none;"></div>
+        
+        <footer class="footer">
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Projets PHP</h2>
+            <p class="countdown" id="countdown"></p>
+            <button onclick="alert('Projets disponibles bientôt !')">Voir les projets PHP</button>
+        </section>
+        
+        <section>
+            <h2>Mon CV</h2>
+            <button onclick="window.open('cv.pdf')">Télécharger le CV</button>
+        </section>
+    </main>
+    
+    <script>
+        function updateCountdown() {
+            const deadline = new Date();
+            deadline.setDate(deadline.getDate() + 7);
+            const interval = setInterval(() => {
+                const now = new Date();
+                const diff = deadline - now;
+                if (diff <= 0) {
+                    document.getElementById("countdown").textContent = "Projets disponibles !";
+                    clearInterval(interval);
+                } else {
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    document.getElementById("countdown").textContent = `Disponible dans ${days} jours`;
+                }
+            }, 1000);
         }
-        function playTaskMusic(event, id, startSeconds, durationSeconds) {
-            event.preventDefault(); 
-            players[id].seekTo(startSeconds);
-            players[id].playVideo();
-           
-            setTimeout(() => {
-                players[id].stopVideo();
-                window.location.href = event.target.href; 
-            }, durationSeconds * 1000);
-
-        } 
+        updateCountdown();
     </script>
-    <div id="introMusic" style="display: none;"></div>
-    <div id="tp1Music" style="display: none;"></div>
-    <div id="tp1_jsMusic" style="display: none;"></div>
-    <div id="tp1bdMusic" style="display: none;"></div>
-    <div id="tp2Music" style="display: none;"></div>
-    <div id="tp3Music" style="display: none;"></div>
-    <div id="tp4Music" style="display: none;"></div>
-    <div id="tp5Music" style="display: none;"></div>
-    <div id="tp6Music" style="display: none;"></div>
-    <div id="tp_factureMusic" style="display: none;"></div>
-    <div id="mission1Music" style="display: none;"></div>
-    <div id="mission2Music" style="display: none;"></div>
-    <div id="mission3Music" style="display: none;"></div>
-    <div id="mission4Music" style="display: none;"></div>
-    <div id="mission5Music" style="display: none;"></div>
 </body>
 </html>
-
-

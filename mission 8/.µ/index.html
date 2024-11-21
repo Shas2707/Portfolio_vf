@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banque d'exercice javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Banque d'exercice javascript </h1>
+    </header>
+    <main>
+        <section id="exercise-list">
+            <h2>Choisissez un exercice :</h2>
+            <select id="exercise-selector">
+                <option value="">-- Sélectionner un exercice --</option>
+            </select>
+        </section>
+        <section id="exercise-display" class="hidden">
+            <h2 id="exercise-title"></h2>
+            <p id="exercise-description"></p>
+            <div>
+                <label for="user-input">Testez votre solution :</label>
+                <input type="text" id="user-input">
+                <button onclick="runExercise()">Exécuter</button>
+            </div>
+            <p>Résultat : <span id="exercise-result"></span></p>
+            <button onclick="showSolution()">Voir la solution</button>
+            <pre id="solution-box" class="hidden"></pre>
+        </section>
+    </main>
+    <script>
+        // Liste des exercices
+        const exercises = [
+            { title: "Exercice 1: Addition de deux nombres", description: "Créez une fonction qui retourne la somme de deux nombres.", functionCode: "function addition(a, b) { return a + b; }", test: "addition(2, 3)" },
+            { title: "Exercice 2: Nombre pair ou impair", description: "Écrivez une fonction qui vérifie si un nombre est pair ou impair.", functionCode: "function estPair(n) { return n % 2 === 0; }", test: "estPair(4)" },
+            { title: "Exercice 3: Trouver le plus grand entre deux nombres", description: "Créez une fonction qui retourne le plus grand entre deux nombres.", functionCode: "function max(a, b) { return a > b ? a : b; }", test: "max(3, 7)" },
+            { title: "Exercice 4: Calcul de la factorielle", description: "Écrivez une fonction qui calcule la factorielle d'un nombre.", functionCode: "function factorielle(n) { return n <= 1 ? 1 : n * factorielle(n - 1); }", test: "factorielle(5)" },
+            { title: "Exercice 5: Vérifier un palindrome", description: "Créez une fonction qui vérifie si un mot est un palindrome.", functionCode: "function estPalindrome(mot) { return mot === mot.split('').reverse().join(''); }", test: "estPalindrome('radar')" },
+            { title: "Exercice 6: Inverser une chaîne", description: "Écrivez une fonction qui inverse une chaîne de caractères.", functionCode: "function inverser(chaine) { return chaine.split('').reverse().join(''); }", test: "inverser('hello')" },
+            { title: "Exercice 7: Trouver le minimum dans un tableau", description: "Créez une fonction qui trouve le plus petit nombre dans un tableau.", functionCode: "function minTab(tab) { return Math.min(...tab); }", test: "minTab([3, 7, 1, 9])" },
+            { title: "Exercice 8: Somme des éléments d'un tableau", description: "Écrivez une fonction qui calcule la somme des éléments d'un tableau.", functionCode: "function sommeTab(tab) { return tab.reduce((a, b) => a + b, 0); }", test: "sommeTab([1, 2, 3, 4])" },
+            { title: "Exercice 9: Vérifier si un nombre est premier", description: "Créez une fonction qui vérifie si un nombre est premier.", functionCode: "function estPremier(n) { for(let i = 2; i < n; i++) { if(n % i === 0) return false; } return n > 1; }", test: "estPremier(7)" },
+            { title: "Exercice 10: Générer une table de multiplication", description: "Écrivez une fonction qui génère la table de multiplication d'un nombre.", functionCode: "function tableMultiplication(n) { return Array.from({length: 10}, (_, i) => n * (i + 1)); }", test: "tableMultiplication(5)" },
+            { title: "Exercice 11: Remplacer les espaces par des tirets", description: "Créez une fonction qui remplace tous les espaces dans une phrase par des tirets.", functionCode: "function remplacerEspaces(phrase) { return phrase.replace(/ /g, '-'); }", test: "remplacerEspaces('hello world')" },
+            { title: "Exercice 12: Compter les voyelles d'un mot", description: "Écrivez une fonction qui compte le nombre de voyelles dans un mot.", functionCode: "function compterVoyelles(mot) { return (mot.match(/[aeiou]/gi) || []).length; }", test: "compterVoyelles('javascript')" },
+            { title: "Exercice 13: Fusionner deux tableaux", description: "Créez une fonction qui fusionne deux tableaux.", functionCode: "function fusionnerTab(tab1, tab2) { return [...tab1, ...tab2]; }", test: "fusionnerTab([1, 2], [3, 4])" },
+            { title: "Exercice 14: Trier un tableau", description: "Écrivez une fonction qui trie un tableau de nombres.", functionCode: "function trierTab(tab) { return tab.sort((a, b) => a - b); }", test: "trierTab([5, 2, 8, 1])" },
+            { title: "Exercice 15: Vérifier un anagramme", description: "Créez une fonction qui vérifie si deux mots sont des anagrammes.", functionCode: "function estAnagramme(mot1, mot2) { return mot1.split('').sort().join('') === mot2.split('').sort().join(''); }", test: "estAnagramme('listen', 'silent')" }
+        ];
+    
+        // Remplir le select avec les exercices
+        const exerciseSelector = document.getElementById("exercise-selector");
+    
+        exercises.forEach((exercise, index) => {
+            const option = document.createElement("option");
+            option.value = index;
+            option.textContent = exercise.title;
+            exerciseSelector.appendChild(option);
+        });
+    
+        // Afficher l'exercice sélectionné
+        exerciseSelector.addEventListener("change", function () {
+            const selectedExercise = exercises[exerciseSelector.value];
+            const exerciseDisplay = document.getElementById("exercise-display");
+            const exerciseTitle = document.getElementById("exercise-title");
+            const exerciseDescription = document.getElementById("exercise-description");
+            const solutionBox = document.getElementById("solution-box");
+    
+            if (selectedExercise) {
+                exerciseTitle.textContent = selectedExercise.title;
+                exerciseDescription.textContent = selectedExercise.description;
+                exerciseDisplay.classList.remove("hidden");
+                solutionBox.textContent = selectedExercise.functionCode;
+            } else {
+                exerciseDisplay.classList.add("hidden");
+            }
+        });
+    
+        // Fonction pour tester la solution de l'utilisateur
+        function runExercise() {
+            const selectedExercise = exercises[document.getElementById("exercise-selector").value];
+            const userInput = document.getElementById("user-input").value;
+            const exerciseResult = document.getElementById("exercise-result");
+    
+            try {
+                const result = eval(userInput); // Exécute le code de l'utilisateur (attention à la sécurité !)
+                exerciseResult.textContent = result === eval(selectedExercise.test) ? "Correct!" : "Incorrect, essayez encore.";
+            } catch (e) {
+                exerciseResult.textContent = "Erreur dans le code.";
+            }
+        }
+    
+        // Fonction pour afficher la solution
+        function showSolution() {
+            document.getElementById("solution-box").classList.toggle("hidden");
+        }
+        
+    </script>    
+</body>
+</html>
