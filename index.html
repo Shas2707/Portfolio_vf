@@ -9,7 +9,7 @@
 <body>
     <div id="introScreen" class="intro-screen">
         <h1>Bienvenue sur le Portfolio d'Alihonou Sharon</h1>
-        <p>Chargement en cours...</p>
+        <p>Chargement en cours le temps d'attente est estimé à moins de 3600 secondes ...</p>
     </div>
     <div id="mainContent" class="hidden">
         <header>
@@ -28,7 +28,9 @@
                     </a>
                 </div>
                 <h2>Mon CV</h2>
-                <button onclick="window.open('cv.pdf')">Télécharger le CV</button>
+                <a href="cv.pdf.pdf" download>
+                    <button>Télécharger le CV</button>
+                </a>
             </section>
 
             <section>
@@ -87,27 +89,44 @@
                     <button onclick="playMusic('mission5Music'); setTimeout(() => { window.location.href='mission5/index.html'; }, 5000);">MISSION 5</button>
                     <button onclick="playMusic('mission6Music'); setTimeout(() => { window.location.href='certification_cyber/index.html'; }, 5000);">MISSION 6 - Certification cyber-sécurité</button>
                     <button onclick="playMusic('mission7Music'); setTimeout(() => { window.location.href='mission7/index.html'; }, 5000);">MISSION 7</button>
+                    <button onclick="playMusic('mission1Music'); setTimeout(() => { window.location.href='mission8/index.html'; }, 5000);">MISSION 8</button>
+                    <button onclick="playMusic('mission1Music'); setTimeout(() => { window.location.href='mission9/index.html'; }, 5000);">MISSION 9</button>
+                    <button onclick="playMusic('mission1Music'); setTimeout(() => { window.location.href='mission10/index.html'; }, 5000);">MISSION 10</button>
                 </div>
             </section>
 
             <section>
-                <h2>Donnez votre avis</h2>
-                <div class="rating">
-                    <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
-                    <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
-                    <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
-                    <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
-                    <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
-                </div>
-                <div class="comment-box">
-                    <textarea placeholder="Laissez votre commentaire..."></textarea>
-                    <br>
-                    <button>Envoyer</button>
-                </div>
+                <h1>Laissez votre avis</h1>
+
+                <form id="reviewForm">
+                    <label for="rating">Note (1 à 5 étoiles):</label>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+                        <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                        <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                        <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                        <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                    </div>
+            
+                    <br><br>
+            
+                    <textarea id="comment" placeholder="Laissez un commentaire..." rows="4" cols="50"></textarea>
+            
+                    <br><br>
+            
+                    <button type="submit">Envoyer l'avis</button>
+                </form>
+            
+                <h2>Avis précédents</h2>
+                <div id="reviewsContainer"></div>
+    <div id="reviewsContainer"></div>
             </section>
         </main>
     </div>
-
+    <footer class="footer">
+        <p>Contact : sharonalihonou@gmail.com</p>
+        <p>&copy; 2025 Alihonou Sharon - Tous droits réservés</p>
+    </footer>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         let introPlayer;
@@ -160,7 +179,7 @@
             }
         }
     </script>
-
+<script src="java.js"></script>
     <div id="introMusic" style="display:none;"></div>
 </body>
 </html>

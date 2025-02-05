@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.facture-container {
+    width: 80%;
+    max-width: 900px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.facture-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.facture-header h1 {
+    font-size: 28px;
+}
+
+.facture-title h2 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.facture-infos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.facture-infos div {
+    width: 45%;
+}
+
+.facture-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.facture-table th, .facture-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.facture-table th {
+    background-color: #f7f7f7;
+}
+
+.facture-table input {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.facture-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.facture-buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.facture-buttons button:hover {
+    background-color: #45a049;
+}
+
+.facture-total {
+    margin-top: 30px;
+    border-top: 2px solid #ccc;
+    padding-top: 20px;
+    text-align: right;
+}
+
+.facture-total p {
+    font-size: 16px;
+}
+
+.facture-total h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
