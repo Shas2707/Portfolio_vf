@@ -1,0 +1,146 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ---------- Base Colors & Variants ---------- */
+:root {
+  --background: oklch(0.985 0.015 55);
+  --foreground: oklch(0.17 0.02 45);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.01 45);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.01 45);
+  --primary: oklch(0.62 0.19 42);
+  --primary-foreground: oklch(0.99 0.01 55);
+  --secondary: oklch(0.95 0.02 50);
+  --secondary-foreground: oklch(0.15 0.01 45);
+  --muted: oklch(0.96 0.015 52);
+  --muted-foreground: oklch(0.45 0.015 45);
+  --accent: oklch(0.68 0.21 38);
+  --accent-foreground: oklch(0.99 0.01 55);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0.01 55);
+  --border: oklch(0.91 0.02 50);
+  --input: oklch(0.97 0.015 52);
+  --ring: oklch(0.62 0.19 42);
+  --radius: 1rem;
+
+  --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --background: oklch(0.18 0.015 45);
+  --foreground: oklch(0.97 0.015 65);
+  --card: oklch(0.22 0.015 45);
+  --card-foreground: oklch(0.97 0.015 65);
+  --popover: oklch(0.22 0.015 45);
+  --popover-foreground: oklch(0.97 0.015 65);
+  --primary: oklch(0.62 0.19 42);
+  --primary-foreground: oklch(0.99 0.01 55);
+  --secondary: oklch(0.28 0.02 45);
+  --secondary-foreground: oklch(0.97 0.015 65);
+  --muted: oklch(0.28 0.02 45);
+  --muted-foreground: oklch(0.68 0.03 55);
+  --accent: oklch(0.68 0.21 38);
+  --accent-foreground: oklch(0.99 0.01 55);
+  --border: oklch(0.3 0.015 45);
+  --input: oklch(0.28 0.02 45);
+  --ring: oklch(0.62 0.19 42);
+
+  --shadow-light: 0 3px 12px rgba(255, 255, 255, 0.05);
+  --shadow-hover: 0 6px 24px rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Theme Mapping ---------- */
+@theme inline {
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Segoe UI", "Noto Color Emoji";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+}
+
+/* ---------- Global Styles ---------- */
+@layer base {
+  /* Bordures et anneaux seulement sur les éléments interactifs et cards */
+  input,
+  textarea,
+  button,
+  select,
+  .card {
+    @apply border-border ring ring-gray-500/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background 0.4s ease, color 0.4s ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl leading-tight;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl leading-snug;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+
+  .card {
+    background: var(--card);
+    color: var(--card-foreground);
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  button {
+    transition: background 0.25s ease, transform 0.2s ease;
+  }
+
+  button:hover {
+    transform: scale(1.02);
+  }
+}
+
